@@ -1,1 +1,18 @@
 
+note over selain:
+spa.js:ssä on kuuntelija save/submit napille
+kun tallennus -nappia painetaan:
+1. luetaan arvo tekstikentästä
+2. lisätään annettu arvo näytöllä olevaan listaan notes
+3. tyhjennetään tekstikenttä
+4. piiretään notes-lista uusiksi elementiinn ul
+5. lähetetään serverille muuttunut json sanoma
+end note
+selain->palvelin: HTTP POST new_note_spa
+palvelin-->selain: response
+note over selain:
+responsessa palautuu koodi 201 joka kertoo, 
+että serveri vastaanotti sanoman onnistuneesti
+ei uudelleenohjausta
+Serverin palauttaman responseText lokitetaan
+end note
