@@ -1,0 +1,24 @@
+selain->palvelin: HTTP POST /new_note
+note over palvelin:
+Palvelin vastaanottaa selaimelta saadun requestin.
+Lisää saadun arvon listaan ja palauttaa selaimelle responsen
+end note
+palvelin-->selain: HTTP code 302
+note over selain:
+Selain saa palvelimelta uudelleenohjauspyynnön (302) osoitteeseen /nodes
+end note
+selain->palvelin: HTTP GET /notes
+palvelin-->selain: text/html
+
+
+selain->palvelin: HTTP GET main.css
+palvelin-->selain: stylesheet
+selain->palvelin: HTTP GET main.js
+palvelin-->selain: script
+selain->palvelin: HTTP GET data.json
+palvelin-->selain: xhr
+
+note over selain:
+selain suorittaa tapahtumankäsittelijän
+joka renderöi muistiinpanot näytölle
+end note
