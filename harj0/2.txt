@@ -1,1 +1,16 @@
-..
+selain->palvelin: HTTP GET /spa
+palvelin-->selain: text/html
+selain->palvelin: HTTP GET main.css
+palvelin-->selain: stylesheet
+selain->palvelin: HTTP GET spa.js
+palvelin-->selain: script
+note over selain:
+spa.js pyytää palvelimelta data.json tiedoston
+end note
+selain->palvelin: HTTP GET data.json
+palvelin-->selain: xhr
+note over selain:
+spa.js odottaa että xhttp-kutsun tila on valmis ja onnistunut
+jonka jälkee piirettän data.json tiedot näytölle
+elementtiin ul.
+end note
